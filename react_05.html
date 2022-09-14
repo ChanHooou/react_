@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <!-- Load Babel -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <div id="root"></div>
+        
+        <script type="text/babel">
+            
+            
+        
+    
+            const rootElement = document.getElementById("root");
+            
+            const paint = (title, description) => (
+                   <>
+                  <h1>{title}</h1>
+                  <h3>{description}</h3>
+                  </>
+            )
+            
+            
+            const Paint = ({title, description, children}) => {
+              return (
+                  <>
+                  <h1>{title}</h1>
+                  <h3>{description}</h3>
+                  {children}
+           
+                  </>
+              ); 
+            };
+            const Num = () => <h3>제발</h3>;
+            const element = (
+                <>
+                    <Num />                    
+                    <Num />                    
+                    <Num /> 
+                    <Paint title="Good" description="good">                   
+                    </Paint>
+                    <Paint title="Bad" description="bad" />
+                    <Paint title="So so" description="so so" />
+                    {paint("Good", "good")}
+                    
+                </>
+                );
+        
+            ReactDOM.render(element,rootElement);
+        </script>
+    </body>
+</html>
